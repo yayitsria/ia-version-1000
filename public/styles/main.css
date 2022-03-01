@@ -1,0 +1,25 @@
+/* CSS for all pages */
+
+html {
+    background-color: #fff ; /*blue lighten-3*/
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Added to make footer at bottom*/ 
+}
+
+main {
+    flex: 1 0 auto
+}
+
+/* nav styles*/
+nav {
+    background-color: #285c2c;  /*blue darken-1*/
+}
+
+/* footer styles */
+.page-footer {
+    background-color: #1e88e5; 
+}

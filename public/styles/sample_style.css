@@ -1,0 +1,19 @@
+p, a {
+    font-size: medium;
+}
+
+form {
+    border: solid 2px lightgrey;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+form:focus-within {
+    border-color: orange;
+}
+
+strong {
+    font-weight: bold;
+    color: red;
+}

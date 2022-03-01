@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/favicon.ico" />
+
+    <!-- Compiled and minified Materialize CSS and icons -->
+    <link rel="stylesheet" href="/styles/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Shared site-wide CSS  -->
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- Additional CSS  -->
+    {{#if style}}
+    <link rel="stylesheet" href="/styles/{{style}}">
+    {{/if}}
+
+    {{#each styles}}
+    <link rel="stylesheet" href="/styles/{{this}}">
+    {{/each}}
+    </head>
+  <body>
+    
+  <!-- https://materializecss.com/navbar.html -->
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        {{!-- <img class="hide-on-small-and-down" src="/images/LOGO_FILE"> --}}
+        <a href="/" class="brand-logo">WEB APP NAME LOGO</a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="desktop-nav" class="right hide-on-med-and-down">
+          <li><a href="/page1"><i class="material-icons left">looks_one</i>Page 1</a></li>
+          <li><a href="/page2"><i class="material-icons left">looks_two</i>Page 2</a></li>
+          <li><a href="/page3"><i class="material-icons left">looks_3</i>Page 3</a></li>
+          {{!-- <li><a href="/login" class="btn">Login / Register</a></li> --}}
+        </ul>
+      </div>
+    </nav>
+    <ul id="mobile-nav" class="sidenav">
+      <li><a href="/page1"><i class="material-icons left">looks_one</i>Page 1</a></li>
+      <li><a href="/page2"><i class="material-icons left">looks_two</i>Page 2</a></li>
+      <li><a href="/page3"><i class="material-icons left">looks_3</i>Page 3</a></li>
+      {{!-- <li><a href="/login" class="btn">Login / Register</a></li> --}}
+    </ul>
+  </header>
+
+
+    <main>
+      {{{body}}}
+    </main>
+
+    <!-- https://materializecss.com/footer.html -->
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container">
+          © 2022 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Compiled and minified Materialize JavaScript -->
+    <script src="/js/materialize.min.js"></script>
+
+    <!-- initialize Materialize elements -->
+    <script> M.AutoInit();</script>
+  </body>
+</html>
