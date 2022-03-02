@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/styles/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+
+
     <!-- Shared site-wide CSS  -->
     <link rel="stylesheet" href="/styles/main.css">
 
@@ -20,27 +22,25 @@
     <link rel="stylesheet" href="/styles/{{this}}">
     {{/each}}
     </head>
-  <body>
+  <body class="bg-light" id="top">
     
   <!-- https://materializecss.com/navbar.html -->
   <header>
     <nav>
       <div class="nav-wrapper">
         {{!-- <img class="hide-on-small-and-down" src="/images/LOGO_FILE"> --}}
-        <a href="/" class="brand-logo">WEB APP NAME LOGO</a>
+        <a href="/" class="brand-logo">Kitchen Tracker</a>
         <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="desktop-nav" class="right hide-on-med-and-down">
-          <li><a href="/page1"><i class="material-icons left">looks_one</i>Page 1</a></li>
-          <li><a href="/page2"><i class="material-icons left">looks_two</i>Page 2</a></li>
-          <li><a href="/page3"><i class="material-icons left">looks_3</i>Page 3</a></li>
+          <li><a href="/inventory">Inventory</a></li>
+          <li><a href="/shoppinglist">Shopping List</a></li>
           {{!-- <li><a href="/login" class="btn">Login / Register</a></li> --}}
         </ul>
       </div>
     </nav>
     <ul id="mobile-nav" class="sidenav">
-      <li><a href="/page1"><i class="material-icons left">looks_one</i>Page 1</a></li>
-      <li><a href="/page2"><i class="material-icons left">looks_two</i>Page 2</a></li>
-      <li><a href="/page3"><i class="material-icons left">looks_3</i>Page 3</a></li>
+      <li><a href="/inventory">Inventory</a></li>
+      <li><a href="/shoppinglist">Shopping List</a></li>
       {{!-- <li><a href="/login" class="btn">Login / Register</a></li> --}}
     </ul>
   </header>
