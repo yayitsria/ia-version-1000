@@ -1,0 +1,63 @@
+ <h2>Create Inventory Item</h2>
+
+ <div class="row">
+    <form class="col s12" method="post" >
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="name" type="text" class="validate" name="name">
+          <label for="name">Name</label>
+        </div>
+        <div class="input-field col s2">
+                <input type="number" id="quantity" name="quantity" min=0 step=1>
+                <label for="quantity">Quantity</label>
+        </div>
+        <div class="input-field col s3">
+        <input id="size" type="text" class="validate" name="size">
+        <label for="size">Size</label>
+    </div>
+</div>
+<div class="row">
+    <div class="input-field col s4">
+        <select name="location">
+                <option value="" disabled selected>Choose an option</option>
+                <option value="1">Fridge</option>
+                <option value="2">Freezer</option>
+                <option value="3">Pantry bottom shelf</option>
+                <option value="4">Pantry top shelf</option>
+                <option value="5">Pantry bins</option>
+                <option value="6">Garage fridge</option>
+                <option value="7">Garage freezer</option>
+                <option value="8">Garage pantry</option>
+                <option value="9">Countertop</option>
+            </select>
+            <label>Location</label>
+    </div>
+    <div class="input-field col s2">
+        <input type="text" class="datepicker" name="expiration_date">
+        <label>Expiration Date</label>
+    </div>
+    <div class="input-field col s2">
+        <select name="type">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="1">Meat</option>
+            <option value="2">Cheese</option>
+            <option value="3">Bread</option>
+            <option value="4">Condiment</option>
+            <option value="5">Seasoning</option>
+            <option value="6">Spices</option>
+            <option value="7">Sweet snack</option>
+            <option value="8">Savory snack</option>
+            <option value="9">Indian snack</option>
+            <option value="10">Drink</option>
+        </select>
+            <label>Type</label>
+    </div>
+    <div class="input-field col s3">
+          <input id="brand" type="text" class="validate" name="brand">
+          <label for="brand">Brand</label>
+        </div>
+</div>
+<button class="waves-effect waves-light btn" type="submit">create inventory item</button>   
+</form>
+
+ <script src="/js/main.js"></script>
