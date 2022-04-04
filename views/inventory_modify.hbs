@@ -58,6 +58,30 @@
         </div>
 </div>
 <button class="waves-effect waves-light btn" type="submit">modify inventory item</button>   
+
+
+
 </form>
 
  <script src="/js/main.js"></script>
+ <script>
+     {{#with inventory_data}} 
+        document.addEventListener('DOMContentLoaded', function() {
+
+          {{!-- Use triple mustaches to NOT escape characters --}}
+
+          document.getElementById("item_id").value = "{{{item_id}}}";
+          document.getElementById("name").value = "{{{name}}}";
+          document.getElementById("quantity").value = "{{{quantity}}}";
+          document.getElementById("size").value = "{{{size}}}";
+          document.getElementById("location").value = "{{{location}}}";
+          document.getElementById("expiration_date").value = "{{{date}}}";
+          document.getElementById("type").value = "{{{type}}}";
+          document.getElementById("brand").value = "{{{brand}}}";
+          
+          var elems = document.querySelectorAll('select');
+          var instances = M.FormSelect.init(elems, {});
+      });
+
+    {{/with}}
+ </script>

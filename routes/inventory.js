@@ -31,7 +31,8 @@ const query_insert = fs.readFileSync(path.join(__dirname, "../db/queries/invento
 
 router.post('/create', async function (req, res, next) {
   try {
-    let results = await db.queryPromise(query_insert, [req.body.name, req.body.quantity, req.body.size, req.body.location, req.body.expiration_date, req.body.type, req.body.brand]);     //make database query, await response
+    let results = await db.queryPromise(query_insert, [req.body.name, req.body.quantity, req.body.size, req.body.location, 
+      req.body.expiration_date, req.body.type, req.body.brand]);     //make database query, await response
     console.log(req.body);
     res.render('inventory_form', { title: 'Create Inventory', style: 'style.css' })
   }
@@ -40,17 +41,29 @@ router.post('/create', async function (req, res, next) {
   }
 });
 
-//modify inventory
-router.get('/modify/:item_id', function (req, res, next) {
 
-  res.render('inventory_modify', { title: 'Modify Inventory', style: 'style.css' });
+const query_show_info = fs.readFileSync(path.join(__dirname, "../db/queries/inventory_modify_info.sql"), "utf-8")
+
+//modify inventory
+router.get('/modify/:item_id', async function (req, res, next) {
+  try {
+    let results = await db.queryPromise(query_show_info, [req.params.item_id]);     //make database query, await response
+    console.log(results)
+    let inventory_data = results[0]
+    res.render('inventory_modify', { title: 'Modify Inventory', style: 'style.css', inventory_data });
+  }
+  catch (err) { // the catch block handles any situation where an error occured, sending an error page instead
+    next(err);
+  }
+  
 });
 
 const query_update = fs.readFileSync(path.join(__dirname, "../db/queries/inventory_update.sql"), "utf-8")
 
 router.post('/modify/:item_id', async function (req, res, next) {
   try {
-    let results = await db.queryPromise(query_update, [req.body.name, req.body.quantity, req.body.size, req.body.location, req.body.expiration_date, req.body.type, req.body.brand, req.params.item_id]);     //make database query, await response
+    let results = await db.queryPromise(query_update, [req.body.name, req.body.quantity, req.body.size, req.body.location, 
+      req.body.expiration_date, req.body.type, req.body.brand, req.params.item_id]);     //make database query, await response
     res.redirect('/inventory');
   }
   catch (err) { // the catch block handles any situation where an error occured, sending an error page instead

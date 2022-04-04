@@ -1,51 +1,49 @@
 <!-- https://materializecss.com/grid.html -->
 
-    <div class="container">
+<div class="container">
 
-      <h1>Inventory</h1>
+  <h1>Inventory</h1>
 
-      <!-- https://materializecss.com/table.html -->
-      <table class="highlight centered responsive-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Size</th>
-            <th>Location</th>
-            <th>Expiration Date</th>
-            <th>Type</th>
-          </tr>
-        </thead>
+  <!-- https://materializecss.com/table.html -->
+  <table class="highlight centered responsive-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Size</th>
+        <th>Location</th>
+        <th>Expiration Date</th>
+        <th>Type</th>
+      </tr>
+    </thead>
 
-        <tbody>
-          {{#each items}}
-          <tr>
+    <tbody>
+      {{#each items}}
+      <tr>
 
-            <!-- USER ONLY - Initialize page with appropriate state of button -->
+        <!-- USER ONLY - Initialize page with appropriate state of button -->
 
-            <td>{{name}}</td>
-            <td>{{quantity}}</td>
-            <td>{{size}}</td>
-            <td>{{location}}</td>
-            <td>{{date}}</a></td>
-            <td>{{type}}</td>
-            <!-- ADMIN ONLY BUTTONS -->
-            <td nowrap>
+        <td>{{name}}</td>
+        <td>{{quantity}}</td>
+        <td>{{size}}</td>
+        <td>{{location}}</td>
+        <td>{{date}}</a></td>
+        <td>{{type}}</td>
+        <!-- ADMIN ONLY BUTTONS -->
+        <td nowrap>
 
-              <a class="btn-floating btn-small waves-effect waves-light green lighten-1" href="/inventory/modify/{{item_id}}"><i
-                  class="material-icons">edit</i></a>
-              <a class="btn-floating waves-effect waves-light red"
-                onclick='confirmDelete("{{name}}","{{item_id}}")'><i class="material-icons">delete</i></a>
+          <a class="btn-floating btn-small waves-effect waves-light green lighten-1"
+            href="/inventory/modify/{{item_id}}"><i class="material-icons">edit</i></a>   
 
-            </td>
-          </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </div>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
 
-    <a href="/inventory/create" class="btn-floating btn-large red fixed-action-btn">
-      <i class="large material-icons">create</i>
-    </a>
+<a href="/inventory/create" class="btn-floating btn-large red fixed-action-btn">
+  <i class="large material-icons">create</i>
+</a>
 
-    <script src="/js/main.js"></script>
+<script src="/js/main.js"></script>

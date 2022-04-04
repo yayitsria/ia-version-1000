@@ -8,7 +8,6 @@ var logger = require('morgan');
 
 //Require all routers
 var indexRouter = require('./routes/index');
-var sampleRouter = require('./routes/sample');
 var inventoryRouter = require('./routes/inventory');
 var shoppinglistRouter = require('./routes/shoppinglist');
 
@@ -26,7 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Register routers for certain URL path prefixes
 app.use('/', indexRouter);
-app.use('/sample', sampleRouter);
 app.use('/inventory', inventoryRouter);
 app.use('/shoppinglist', shoppinglistRouter);
 

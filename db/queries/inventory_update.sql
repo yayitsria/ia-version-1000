@@ -9,3 +9,4 @@ SET
     brand = ?
 WHERE
     item_id = ?
+
